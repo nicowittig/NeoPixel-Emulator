@@ -2,8 +2,13 @@ from pixel import Pixel
 import time
 from neopixel_emulator import NeoPixel_Emulator
 
+import os
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
 class Adafruit_NeoPixel():
-    def __init__(self, pixel_num, pixel_pin, pixel_type):
+    def __init__(self, pixel_pin, pixel_num, pixel_type="NEO_GRB + NEO_KHZ800"):
         self.pixel_number = pixel_num
         self.pin = pixel_pin
         self.pixel_type = pixel_type
